@@ -110,7 +110,7 @@ export default class Search extends Component {
   };
 
   setValue = (input) => {
-    return this.setState({input})
+    return this.setState({ input })
   };
 
   show = () => {
@@ -222,7 +222,7 @@ export default class Search extends Component {
     return some(collection, item => this._depthFirstSearch(item, input));
   };
 
-  _dimHandler = dims => this.setState({dimensions: dims.window});
+  _dimHandler = dims => this.setState({ dimensions: dims.window });
 
   componentWillMount() {
     Dimensions.addEventListener("change", this._dimHandler);
@@ -276,7 +276,7 @@ export default class Search extends Component {
           }
         ]}>
         {this.state.show && (
-          <View style={[{ backgroundColor }, {width:this.state.dimensions.width}]}>
+          <View style={[{ backgroundColor }, { width: this.state.dimensions.width }]}>
             {Platform.OS === 'ios' &&
               iOSPadding && <View style={{ height: 20, backgroundColor: iOSPaddingBackgroundColor }} />}
             <View
@@ -296,15 +296,15 @@ export default class Search extends Component {
                       {backButton}
                     </View>
                   ) : (
-                    <Icon
-                      name="arrow-back"
-                      size={backCloseSize}
-                      style={{
-                        color: iconColor,
-                        padding: heightAdjust / 2 + 10
-                      }}
-                    />
-                  )}
+                      <Icon
+                        name="arrow-back"
+                        size={backCloseSize}
+                        style={{
+                          color: iconColor,
+                          padding: heightAdjust / 2 + 10
+                        }}
+                      />
+                    )}
                 </TouchableOpacity>
               )}
               <TextInput
@@ -313,7 +313,7 @@ export default class Search extends Component {
                 style={[
                   styles.input,
                   {
-                    width:this.state.dimensions.width-120,
+                    width: this.state.dimensions.width - 120,
                     fontSize: fontSize,
                     color: textColor,
                     fontFamily: fontFamily,
@@ -349,18 +349,18 @@ export default class Search extends Component {
                     {closeButton}
                   </View>
                 ) : (
-                  <Icon
-                    name={'close'}
-                    size={backCloseSize}
-                    style={{
-                      color:
-                        hideX || this.state.input == ''
-                          ? backgroundColor
-                          : iconColor,
-                      padding: heightAdjust / 2 + 10
-                    }}
-                  />
-                )}
+                    <Icon
+                      name={'close'}
+                      size={backCloseSize}
+                      style={{
+                        color:
+                          hideX || this.state.input == ''
+                            ? backgroundColor
+                            : iconColor,
+                        padding: heightAdjust / 2 + 10
+                      }}
+                    />
+                  )}
               </TouchableOpacity>
             </View>
           </View>
